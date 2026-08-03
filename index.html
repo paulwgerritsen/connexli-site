@@ -4,10 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Connexli. Real Connections. Better Decisions.</title>
-<meta name="description" content="Connexli connects homeowners with verified real estate professionals who compete for your business. Compare sealed proposals side by side. Launching soon in Utah.">
+<meta name="description" content="Connexli connects homeowners with verified real estate professionals who compete for your business. Compare sealed proposals side by side. Now live in Utah.">
 <meta property="og:title" content="Connexli. Real Connections. Better Decisions.">
-<meta property="og:description" content="Verified real estate professionals compete for your business. Compare sealed proposals side by side. Launching soon in Utah.">
+<meta property="og:description" content="Verified real estate professionals compete for your business. Compare sealed proposals side by side. Now live in Utah.">
 <meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="logo.png">
 <meta property="og:url" content="https://connexli.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -224,22 +225,14 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="Connexli home">
-      <svg width="40" height="23" viewBox="0 0 64 34" aria-hidden="true">
-        <defs>
-          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1565FF"/><stop offset="1" stop-color="#0A3EA8"/></linearGradient>
-          <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#42B6FF"/><stop offset="1" stop-color="#1565FF"/></linearGradient>
-        </defs>
-        <circle cx="22" cy="17" r="12" fill="none" stroke="url(#g1)" stroke-width="7"/>
-        <circle cx="42" cy="17" r="12" fill="none" stroke="url(#g2)" stroke-width="7"/>
-        <path d="M 34.5 8 A 12 12 0 0 0 34.5 26" fill="none" stroke="url(#g1)" stroke-width="7"/>
-      </svg>
+<img src="logo.png" alt="" height="24" style="display:block;">
       <span class="wordmark">connex<span>li</span></span>
     </a>
     <nav class="nav-links" aria-label="Main">
       <a href="#how">How it works</a>
       <a href="#professionals">For professionals</a>
       <a href="https://app.connexli.com/login">Log in</a>
-      <a class="btn" href="#waitlist">Join the waitlist</a>
+      <a class="btn" href="https://app.connexli.com/register">Get started</a>
     </nav>
   </div>
 </header>
@@ -249,11 +242,11 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow">Launching soon in Utah</span>
+        <span class="eyebrow">Now live in Utah</span>
         <h1>The smarter way to <em>connect, compare,</em> and choose.</h1>
         <p class="sub">Verified real estate professionals compete for your business. You compare their proposals side by side and choose with confidence.</p>
         <div class="hero-ctas">
-          <a class="btn light" href="#waitlist">Join the waitlist</a>
+          <a class="btn light" href="https://app.connexli.com/register">Get started</a>
           <a class="btn ghost" href="#how">See how it works</a>
         </div>
       </div>
@@ -283,11 +276,11 @@
   <section class="how" id="how">
     <div class="wrap">
       <h2 class="reveal">Three steps. You stay in control.</h2>
-      <p class="lead reveal">Your name, address, and contact info stay private until you decide who earns your business.</p>
+      <p class="lead reveal">Your address and contact info are hidden until you choose to share them.</p>
       <div class="timeline">
         <div class="tstep reveal">
           <div class="tnum">1</div>
-          <div><h3>Connect</h3><p>Tell us about your home and your priorities. It takes about two minutes, and your identity stays hidden.</p></div>
+          <div><h3>Connect</h3><p>Tell us about your home and your priorities. It takes about two minutes, and your identity stays hidden the entire time.</p></div>
         </div>
         <div class="tstep reveal">
           <div class="tnum">2</div>
@@ -313,6 +306,7 @@
           <li><span class="tick">✓</span>No obligation at any point. Walk away whenever you like.</li>
         </ul>
         <p class="small">Selling first. Buying support arrives after launch.</p>
+        <a class="btn light" style="margin-top:18px;" href="https://app.connexli.com/register">Get started</a>
       </div>
       <div class="aud-panel light reveal" id="professionals">
         <h3>For professionals</h3>
@@ -347,8 +341,8 @@
   <section class="waitlist" id="waitlist">
     <div class="wrap">
       <div class="wl-card reveal">
-        <h2>Be first when we launch</h2>
-        <p class="lead">Connexli opens statewide across Utah. Join the waitlist and we'll email you the moment we go live.</p>
+        <h2>Not in Utah? Be first in your state</h2>
+        <p class="lead">Connexli is live across Utah today. If you're outside Utah, join the waitlist and we'll email you the moment we launch in your state.</p>
         <form id="wlForm" novalidate>
           <div>
             <label for="role">I am a…</label>
@@ -365,8 +359,8 @@
               <input type="email" id="email" name="email" autocomplete="email" required>
             </div>
             <div>
-              <label for="zip">ZIP code <span class="hint">(optional)</span></label>
-              <input type="text" id="zip" name="zip" inputmode="numeric" autocomplete="postal-code">
+              <label for="state">Your state</label>
+              <input type="text" id="state" name="state" autocomplete="address-level1" placeholder="e.g. Idaho">
             </div>
           </div>
           <div class="form-msg" id="formMsg" role="status"></div>
@@ -396,11 +390,11 @@
         </details>
         <details>
           <summary>Who sees my information?</summary>
-          <p>Until you choose, professionals see only general details: area, home type, size, and price range. Your name, exact address, and contact info are released only to the professional you select.</p>
+          <p>Until you choose, professionals see only general details: area, home type, size, and price range. Your address and contact info are hidden until you choose to share them, and they are released only to the professional you select.</p>
         </details>
         <details>
           <summary>When and where does Connexli launch?</summary>
-          <p>The pilot opens in the state of Utah, with more areas to follow soon. Waitlist members hear first, and founding professional spots are limited.</p>
+          <p>Connexli is live now across the state of Utah. Homeowners and real estate professionals can register today. More states are coming soon, and waitlist members hear first.</p>
         </details>
       </div>
     </div>
@@ -412,11 +406,7 @@
     <div class="foot-grid">
       <div>
         <a class="brand" href="#top" aria-label="Connexli home">
-          <svg width="36" height="21" viewBox="0 0 64 34" aria-hidden="true">
-            <circle cx="22" cy="17" r="12" fill="none" stroke="#1565FF" stroke-width="7"/>
-            <circle cx="42" cy="17" r="12" fill="none" stroke="#42B6FF" stroke-width="7"/>
-            <path d="M 34.5 8 A 12 12 0 0 0 34.5 26" fill="none" stroke="#1565FF" stroke-width="7"/>
-          </svg>
+          <img src="logo.png" alt="" height="20" style="display:block;">
           <span class="wordmark" style="font-size:18px;">connex<span style="color:#42B6FF">li</span></span>
         </a>
         <p class="tagline">Real Connections. Better Decisions.</p>
@@ -427,7 +417,7 @@
         <a href="mailto:hello@connexli.com">Contact</a>
       </nav>
     </div>
-    <p class="foot-legal">© 2026 Connexli. All rights reserved. Connexli is not a real estate brokerage and does not provide brokerage services. Representation agreements are signed directly with each professional's brokerage. Terms of Service and Privacy Policy will be published before launch.</p>
+    <p class="foot-legal">© 2026 Connexli. All rights reserved. Connexli is not a real estate brokerage and does not provide brokerage services. Representation agreements are signed directly with each professional's brokerage. Terms of Service and Privacy Policy coming shortly.</p>
   </div>
 </footer>
 
@@ -460,7 +450,7 @@
       const res = await fetch('https://formspree.io/f/'+FORMSPREE_ID, {
         method:'POST',
         headers:{'Accept':'application/json','Content-Type':'application/json'},
-        body: JSON.stringify({ role, email, zip: document.getElementById('zip').value.trim() })
+        body: JSON.stringify({ role, email, state: document.getElementById('state').value.trim() })
       });
       if(!res.ok) throw new Error();
       msg.className = 'form-msg ok';
