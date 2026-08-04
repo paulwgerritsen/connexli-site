@@ -71,7 +71,7 @@
     display:inline-block; font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
     color:var(--sky); margin-bottom:18px;
   }
-  .hero h1{color:#fff; font-size:clamp(28px, 3vw, 40px); font-weight:700; max-width:22ch;}
+  .hero h1{color:#fff; font-size:clamp(25px, 2.6vw, 35px); font-weight:700; line-height:1.25;}
   .hero h1 em{font-style:normal; color:var(--sky);}
   .hero .sub{color:#C4D2E6; font-size:17px; margin-top:18px; max-width:46ch;}
   .hero-ctas{display:flex; gap:14px; margin-top:30px; flex-wrap:wrap;}
@@ -133,6 +133,11 @@
     .tstep .tnum{margin-bottom:16px;}
   }
 
+  .after{margin-top:44px; background:var(--navy); border-radius:var(--r-card); padding:26px 30px; color:#fff;}
+  .after h3{font-size:17px; color:#fff; margin-bottom:14px;}
+  .after-row{display:flex; flex-wrap:wrap; gap:10px 26px; font-size:14.5px; color:#C4D2E6;}
+  .after-row b{display:inline-flex; width:24px; height:24px; border-radius:50%; background:var(--blue); color:#fff; align-items:center; justify-content:center; font-size:12.5px; margin-right:7px;}
+  .after-row span{display:flex; align-items:center;}
   /* ===== two audiences ===== */
   .aud{padding:0 0 88px;}
   .aud-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:22px;}
@@ -243,7 +248,7 @@
     <div class="wrap hero-grid">
       <div>
         <span class="eyebrow">Now live in Utah</span>
-        <h1>The smarter way to <em>connect, compare,</em> and choose.</h1>
+        <h1>Sell your home.<br>Compare real estate agents.<br><em>Choose the one that's right for you.</em></h1>
         <p class="sub">Verified real estate professionals compete for your business. You compare their proposals side by side and choose with confidence.</p>
         <div class="hero-ctas">
           <a class="btn light" href="https://app.connexli.com/register">Get started</a>
@@ -280,15 +285,25 @@
       <div class="timeline">
         <div class="tstep reveal">
           <div class="tnum">1</div>
-          <div><h3>Connect</h3><p>Tell us about your home and your priorities. It takes about two minutes, and your identity stays hidden the entire time.</p></div>
+          <div><h3>Tell us about your home</h3><p>About two minutes of basics. Your identity stays hidden the entire time.</p></div>
         </div>
         <div class="tstep reveal">
           <div class="tnum">2</div>
-          <div><h3>Compare</h3><p>Licensed local professionals submit sealed proposals: their fee, services, marketing plan, and track record.</p></div>
+          <div><h3>Compare verified agents</h3><p>Licensed professionals submit sealed proposals: their fee, services, marketing plan, and track record.</p></div>
         </div>
         <div class="tstep reveal">
           <div class="tnum">3</div>
-          <div><h3>Choose</h3><p>Review everything side by side, then share your contact info only with the professional you pick. No obligation.</p></div>
+          <div><h3>Choose who earns your business</h3><p>Review everything side by side, then share your contact info only with the professional you pick.</p></div>
+        </div>
+      </div>
+      <div class="after" id="after">
+        <h3>What happens after I submit?</h3>
+        <div class="after-row">
+          <span><b>1</b> Agents compete</span>
+          <span><b>2</b> You receive proposals</span>
+          <span><b>3</b> Compare side by side</span>
+          <span><b>4</b> Choose one</span>
+          <span><b>5</b> No obligation, ever</span>
         </div>
       </div>
     </div>
