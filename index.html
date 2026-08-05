@@ -55,11 +55,31 @@
   .brand{display:flex; align-items:center; gap:9px; text-decoration:none;}
   .wordmark{font-size:21px; font-weight:700; color:#fff; letter-spacing:-.02em;}
   .wordmark span{color:var(--sky);}
-  .nav-links{display:flex; gap:26px; align-items:center;}
+  .nav-links{display:flex; gap:26px; align-items:center; margin-left:auto;}
   .nav-links a{color:#C7D3E4; font-size:14.5px; text-decoration:none; transition:color .15s;}
   .nav-links a:hover{color:#fff;}
+  .nav-cta{display:flex; align-items:center; gap:10px;}
   .nav .btn{padding:10px 22px; font-size:14.5px;}
-  @media (max-width:860px){ .nav-links a{display:none;} }
+  .menu-btn{display:none; background:none; border:none; cursor:pointer; padding:9px; border-radius:8px; color:#C7D3E4;}
+  .menu-btn:hover{color:#fff;}
+  .menu-btn:focus-visible{outline:3px solid var(--sky); outline-offset:2px;}
+  .menu-btn svg{display:block;}
+  .menu-btn .icon-close{display:none;}
+  .menu-btn[aria-expanded="true"] .icon-open{display:none;}
+  .menu-btn[aria-expanded="true"] .icon-close{display:block;}
+  @media (max-width:860px){
+    .menu-btn{display:block;}
+    .nav-links{
+      display:none; position:absolute; top:68px; left:0; right:0;
+      flex-direction:column; align-items:stretch; gap:0;
+      background:var(--navy); padding:4px 24px 14px;
+      border-bottom:1px solid rgba(255,255,255,.1);
+      box-shadow:0 16px 28px rgba(10,27,51,.4);
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{display:block; padding:14px 0; font-size:16px; border-bottom:1px solid rgba(255,255,255,.08);}
+    .nav-links a:last-child{border-bottom:none;}
+  }
 
   /* ===== hero (navy, per brand board) ===== */
   .hero{background:linear-gradient(155deg, var(--navy) 55%, var(--navy-3)); color:#fff; overflow:hidden;}
@@ -234,13 +254,19 @@
 <img src="logo.png" alt="" height="24" style="display:block;">
       <span class="wordmark">connex<span>li</span></span>
     </a>
-    <nav class="nav-links" aria-label="Main">
+    <nav class="nav-links" id="mobile-menu" aria-label="Main">
       <a href="#how">How it works</a>
       <a href="about.html">About</a>
       <a href="#faq">FAQ</a>
       <a href="https://app.connexli.com/login">Log in</a>
-      <a class="btn" href="https://app.connexli.com/register">Get started</a>
     </nav>
+    <div class="nav-cta">
+      <a class="btn" href="https://app.connexli.com/register">Get started</a>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -454,7 +480,7 @@
         <a href="mailto:hello@connexli.com">Contact</a>
       </nav>
     </div>
-    <p class="foot-legal">© 2026 Connexli. All rights reserved. Connexli is not a real estate brokerage and does not provide brokerage services. Representation agreements are signed directly with each professional's brokerage. Terms of Service and Privacy Policy coming shortly.</p>
+    <p class="foot-legal">© 2026 Connexli. All rights reserved. Connexli is not a real estate brokerage and does not provide brokerage services. Representation agreements are signed directly with each professional's brokerage. <a href="terms.html" style="color:#9FB2CC;">Terms of Service</a> · <a href="privacy.html" style="color:#9FB2CC;">Privacy Policy</a></p>
   </div>
 </footer>
 
@@ -506,6 +532,17 @@
     entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
   }, { threshold: 0.15 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ---- Mobile menu ---- */
+  const menuBtn = document.querySelector('.menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  function setMenu(open){
+    menu.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+  }
+  menuBtn.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') setMenu(false); });
 </script>
 </body>
 </html>
