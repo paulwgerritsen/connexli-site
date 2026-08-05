@@ -63,15 +63,14 @@
 
   /* ===== hero (navy, per brand board) ===== */
   .hero{background:linear-gradient(155deg, var(--navy) 55%, var(--navy-3)); color:#fff; overflow:hidden;}
-  .hero-grid{
-    display:grid; grid-template-columns:1.2fr .8fr; gap:48px; align-items:center;
-    padding:72px 0 84px;
-  }
+  .hero-solo{max-width:780px; margin:0 auto; padding:72px 24px 70px; text-align:center;}
+  .hero-solo .sub{margin-left:auto; margin-right:auto; max-width:60ch;}
+  .hero-solo .hero-ctas{justify-content:center;}
   .eyebrow{
     display:inline-block; font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
     color:var(--sky); margin-bottom:18px;
   }
-  .hero h1{color:#fff; font-size:clamp(25px, 2.6vw, 35px); font-weight:700; line-height:1.25;}
+  .hero h1{color:#fff; font-size:clamp(26px, 2.9vw, 38px); font-weight:700; line-height:1.3;}
   .hero h1 em{font-style:normal; color:var(--sky);}
   .hero .sub{color:#C4D2E6; font-size:17px; margin-top:18px; max-width:46ch;}
   .hero-ctas{display:flex; gap:14px; margin-top:30px; flex-wrap:wrap;}
@@ -139,6 +138,7 @@
   .after-row b{display:inline-flex; width:24px; height:24px; border-radius:50%; background:var(--blue); color:#fff; align-items:center; justify-content:center; font-size:12.5px; margin-right:7px;}
   .after-row span{display:flex; align-items:center;}
   /* ===== two audiences ===== */
+  .sample{padding:0 0 84px;}
   .aud{padding:0 0 88px;}
   .aud-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:22px;}
   .aud-panel{border-radius:var(--r-card); padding:38px 36px;}
@@ -193,7 +193,8 @@
   .wl-note{font-size:12.5px; color:var(--muted); text-align:center; margin-top:14px;}
 
   /* ===== faq ===== */
-  .faq{padding:0 0 88px;}
+  .faq{padding:0 0 68px;}
+  .finalcta{padding:0 0 90px;}
   .faq h2{font-size:clamp(24px, 3vw, 32px); margin-bottom:26px;}
   .faq-list{max-width:760px;}
   details{border-top:1px solid var(--line);}
@@ -235,7 +236,7 @@
     </a>
     <nav class="nav-links" aria-label="Main">
       <a href="#how">How it works</a>
-      <a href="#professionals">For professionals</a>
+      <a href="#faq">FAQ</a>
       <a href="https://app.connexli.com/login">Log in</a>
       <a class="btn" href="https://app.connexli.com/register">Get started</a>
     </nav>
@@ -245,34 +246,13 @@
 <main id="top">
   <!-- HERO -->
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow">Now live in Utah</span>
-        <h1>Sell your home.<br>Compare real estate agents.<br><em>Choose the one that's right for you.</em></h1>
-        <p class="sub">Verified real estate professionals compete for your business. You compare their proposals side by side and choose with confidence.</p>
-        <div class="hero-ctas">
-          <a class="btn light" href="https://app.connexli.com/register">Get started</a>
-          <a class="btn ghost" href="#how">See how it works</a>
-        </div>
-      </div>
-      <div class="preview" role="img" aria-label="Preview of Connexli proposal comparison showing three agent proposals">
-        <div class="ph"><b>Your proposals</b><span class="chip">✓ Verified pros</span></div>
-        <div class="prow">
-          <div class="pava" style="background:#1565FF">SK</div>
-          <div><div class="pname">Sarah K.</div><div class="pmeta">★ 4.9 · 84 sales</div></div>
-          <div class="pfee"><b>1.25%</b><span>Photos + drone</span></div>
-        </div>
-        <div class="prow">
-          <div class="pava" style="background:#0A1B33">MS</div>
-          <div><div class="pname">Mike S.</div><div class="pmeta">★ 4.8 · 132 sales</div></div>
-          <div class="pfee"><b>$8,500</b><span>Flat fee</span></div>
-        </div>
-        <div class="prow">
-          <div class="pava" style="background:#42B6FF">JL</div>
-          <div><div class="pname">Jenna L.</div><div class="pmeta">★ 4.6 · 203 sales</div></div>
-          <div class="pfee"><b>1.35%</b><span>Full marketing</span></div>
-        </div>
-        <div class="pfoot">🔒 Proposals stay sealed until the window closes. Sample data shown.</div>
+    <div class="wrap hero-solo">
+      <span class="eyebrow">Now live in Utah</span>
+      <h1>Sell your home with confidence.<br><em>Let verified real estate agents compete for your business.</em></h1>
+      <p class="sub">Instead of interviewing one agent at a time, you receive multiple proposals you can compare side by side, including commission, marketing plan, experience, and services, before deciding who earns your business.</p>
+      <div class="hero-ctas">
+        <a class="btn light" href="https://app.connexli.com/register">Get Started as a Homeowner</a>
+        <a class="btn ghost" href="https://app.connexli.com/register">Get Started as a Professional</a>
       </div>
     </div>
   </section>
@@ -305,6 +285,34 @@
           <span><b>4</b> Choose one</span>
           <span><b>5</b> No obligation, ever</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SAMPLE PROPOSALS -->
+  <section class="sample" id="sample">
+    <div class="wrap" style="max-width:640px; text-align:center;">
+      <h2 style="font-size:clamp(24px, 3vw, 32px);">Sample agent proposals</h2>
+      <p class="lead" style="color:var(--muted); font-size:16px; margin-top:10px;">An example of what homeowners receive when the proposal window closes. Every agent shown to you is license-verified.</p>
+      <div class="preview" style="margin:26px auto 0; text-align:left;">
+        <div class="ph"><b>Example proposals</b><span class="chip">✓ Verified pros</span></div>
+        <div class="prow">
+          <div class="pava" style="background:#1565FF">SK</div>
+          <div><div class="pname">Sarah K.</div><div class="pmeta">★ 4.9 · 84 sales</div></div>
+          <div class="pfee"><b>1.25%</b><span>Photos + drone</span></div>
+        </div>
+        <div class="prow">
+          <div class="pava" style="background:#0A1B33">MS</div>
+          <div><div class="pname">Mike S.</div><div class="pmeta">★ 4.8 · 132 sales</div></div>
+          <div class="pfee"><b>$8,500</b><span>Flat fee</span></div>
+        </div>
+        <div class="prow">
+          <div class="pava" style="background:#42B6FF">JL</div>
+          <div><div class="pname">Jenna L.</div><div class="pmeta">★ 4.6 · 203 sales</div></div>
+          <div class="pfee"><b>1.35%</b><span>Full marketing</span></div>
+        </div>
+        <div class="pfoot">🔒 Proposals stay sealed until the window closes. Sample data shown.</div>
       </div>
     </div>
   </section>
@@ -387,7 +395,7 @@
   </section>
 
   <!-- FAQ -->
-  <section class="faq">
+  <section class="faq" id="faq">
     <div class="wrap">
       <h2 class="reveal">Common questions</h2>
       <div class="faq-list reveal">
@@ -412,6 +420,18 @@
           <p>Connexli is live now across the state of Utah. Homeowners and real estate professionals can register today. More states are coming soon, and waitlist members hear first.</p>
         </details>
       </div>
+    </div>
+  </section>
+  <!-- FINAL CTA -->
+  <section class="finalcta">
+    <div class="wrap" style="text-align:center; max-width:640px;">
+      <h2 style="font-size:clamp(24px, 3vw, 32px);">Ready when you are</h2>
+      <p style="color:var(--muted); font-size:16px; margin-top:10px;">Free for homeowners. Free for founding professionals during the Utah launch.</p>
+      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:24px;">
+        <a class="btn" href="https://app.connexli.com/register">Get Started as a Homeowner</a>
+        <a class="btn ghost" style="color:var(--navy); border-color:var(--line);" href="https://app.connexli.com/register">Get Started as a Professional</a>
+      </div>
+      <p class="note" style="margin-top:14px;">Already have an account? <a href="https://app.connexli.com/login">Log in</a></p>
     </div>
   </section>
 </main>
