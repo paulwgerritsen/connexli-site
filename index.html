@@ -94,6 +94,18 @@
   .hero h1 em{font-style:normal; color:var(--sky);}
   .hero .sub{color:#C4D2E6; font-size:17px; margin-top:18px; max-width:46ch;}
   .hero-ctas{display:flex; gap:14px; margin-top:30px; flex-wrap:wrap;}
+  .path-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:680px; margin:30px auto 0;}
+  @media (max-width:640px){ .path-grid{grid-template-columns:1fr;} }
+  .path-card{
+    background:#fff; border-radius:var(--r-card); padding:22px 22px 18px; text-align:left;
+    text-decoration:none; color:var(--ink); display:flex; flex-direction:column; gap:6px;
+    box-shadow:0 14px 40px rgba(4,12,26,.35); transition:transform .16s ease, box-shadow .16s ease;
+  }
+  .path-card:hover{transform:translateY(-3px); box-shadow:0 20px 48px rgba(4,12,26,.45);}
+  .path-card .path-ic{font-size:26px;}
+  .path-card b{font-size:17px; color:var(--navy); letter-spacing:-.01em;}
+  .path-card span{font-size:13.5px; color:var(--muted); line-height:1.55;}
+  .path-card .path-cta{color:var(--blue); font-weight:600; font-size:14px; margin-top:6px;}
 
   /* live product preview (real UI, not a fake screenshot) */
   .preview{
@@ -256,6 +268,7 @@
     </a>
     <nav class="nav-links" id="mobile-menu" aria-label="Main">
       <a href="#how">How it works</a>
+      <a href="buying.html">Buying</a>
       <a href="about.html">About</a>
       <a href="#faq">FAQ</a>
       <a href="https://app.connexli.com/login">Log in</a>
@@ -275,12 +288,23 @@
   <section class="hero">
     <div class="wrap hero-solo">
       <span class="eyebrow">Now live in Utah</span>
-      <h1>Sell your home with confidence.<br><em>Let verified real estate agents compete for your business.</em></h1>
-      <p class="sub">Instead of interviewing one agent at a time, you receive multiple proposals you can compare side by side, including commission, marketing plan, experience, and services, before deciding who earns your business.</p>
-      <div class="hero-ctas">
-        <a class="btn light" href="https://app.connexli.com/register">Get Started as a Homeowner</a>
-        <a class="btn ghost" href="https://app.connexli.com/register">Get Started as a Professional</a>
+      <h1>Make your biggest decision with confidence.<br><em>Verified real estate agents compete for your business.</em></h1>
+      <p class="sub">Selling or buying, you receive sealed proposals you can compare side by side — fees, services, and experience — before deciding who earns your business. Anonymous until you choose.</p>
+      <div class="path-grid">
+        <a class="path-card" href="https://app.connexli.com/register">
+          <span class="path-ic">🏡</span>
+          <b>I'm selling a home</b>
+          <span>Listing agents compete with sealed proposals — commission, marketing plan, and services side by side.</span>
+          <span class="path-cta">Get seller proposals ›</span>
+        </a>
+        <a class="path-card" href="buying.html">
+          <span class="path-ic">🔑</span>
+          <b>I'm buying a home</b>
+          <span>Buyer's agents compete for you — fees, included tours, and expertise compared honestly.</span>
+          <span class="path-cta">Find my buyer's agent ›</span>
+        </a>
       </div>
+      <p style="margin-top:16px; font-size:14px; color:#9FB2CC;">Doing both? One account handles both sides. · <a href="https://app.connexli.com/register" style="color:#42B6FF; font-weight:600;">Real estate professional? Get started ›</a></p>
     </div>
   </section>
 
@@ -446,6 +470,42 @@
           <summary>When and where does Connexli launch?</summary>
           <p>Connexli is live now across the state of Utah. Homeowners and real estate professionals can register today. More states are coming soon, and waitlist members hear first.</p>
         </details>
+        <details>
+          <summary>Can Connexli help me find a buyer's agent too?</summary>
+          <p>Yes — Find Your Buyer's Agent works the same way as the selling side: verified buyer's agents send you sealed proposals with their fees, included tours, and services, and you compare them side by side. Your name and contact info stay hidden until you choose one. <a href="buying.html">See how buying works on Connexli ›</a></p>
+        </details>
+        <details>
+          <summary>Do I need to be preapproved before creating a buyer profile?</summary>
+          <p>No — anyone can create one. But here's the honest truth about how agents behave: they compete hardest for buyers who are ready to act. If you're preapproved (or paying cash), your profile carries a "Ready Now" badge and typically draws the strongest proposals. If you're earlier in the process, we'll show you exactly how to get ready — and the moment you are, your profile goes live to agents with one tap.</p>
+        </details>
+        <details>
+          <summary>What's the difference between prequalified and preapproved?</summary>
+          <p>Prequalification is a quick estimate based on what you tell a lender. Preapproval means a lender has verified your documents and issued a letter stating what they'll lend you. Sellers and agents take preapproval far more seriously — in a competitive market, it's the difference between an offer that gets read and one that gets set aside.</p>
+        </details>
+        <details>
+          <summary>I live outside Utah. Can I use Connexli to find an agent here?</summary>
+          <p>Absolutely — relocating buyers are some of the best-prepared buyers there are. Your profile lets you share where you're moving from, when you plan to visit, and whether you'd like video tours. Agents who specialize in relocation will say so in their proposals, and everything up to choosing your agent can happen before you ever set foot in Utah.</p>
+        </details>
+        <details>
+          <summary>I need to sell my current home before I buy. Can Connexli handle both?</summary>
+          <p>Yes — that's exactly what Connexli is built for. Tell us in your buyer profile and, with one tap, you can also receive sealed proposals from listing agents for your current home. Compare both sets side by side. Some agents may propose on both; you're free to choose the same agent for both or different agents for each.</p>
+        </details>
+        <details>
+          <summary>Will agents call or email me after I create a buyer profile?</summary>
+          <p>No. Agents never see your name or contact information while you're comparing. They see an anonymous snapshot of your search, and they respond with written sealed proposals. Your contact details are shared with exactly one agent — the one you choose.</p>
+        </details>
+        <details>
+          <summary>Some buyer proposals mention a retainer or an hourly rate. Is that normal?</summary>
+          <p>Since the industry rules changed in 2024, buyer's agents can structure fees several ways: a percentage at closing, a flat fee, an hourly rate, or a retainer that's usually credited back against the fee when you close. Each proposal must spell out its structure plainly — that's the point of comparing on Connexli.</p>
+        </details>
+        <details>
+          <summary>For professionals: how do buyer profiles work?</summary>
+          <p>Buyer opportunities appear on your dashboard beside seller requests — anonymous snapshots with a verified readiness badge (Ready Now, Preparing) assigned from the buyer's actual financing answers. Buyers who are just researching don't enter the pool at all, so every profile you see is worth reading. Proposals are capped at 5 per buyer, sealed as always, and your template supports percentage, flat, hourly, and retainer structures plus a minimum fee — so your proposal can reflect what buyer representation actually costs you in time.</p>
+        </details>
+        <details>
+          <summary>For professionals: what about buyers who already signed a Buyer Broker Agreement?</summary>
+          <p>We screen for this in the buyer's profile. Buyers who tell us they're under an active exclusive agreement can't publish a profile until it expires — protecting you from procuring-cause conflicts and wasted effort.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -490,7 +550,7 @@
      copy the Project API key (starts with "phc_"), and paste it below.
      Until then, this does nothing at all — the site works normally.
      Cookie-less mode: no cookies are set, matching our Privacy Policy. */
-  const POSTHOG_KEY = "phc_CXhiMPgKUiMRS8qGNDzg6SYRUmdPQC6a7Su26bjYjRCC";
+  const POSTHOG_KEY = "";
 
   if (POSTHOG_KEY) {
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset identify alias group set_config".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
