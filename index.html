@@ -244,7 +244,8 @@
   footer{background:var(--navy); color:#9FB2CC; padding:48px 0 40px; font-size:13.5px;}
   .foot-grid{display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:flex-start;}
   .foot-grid .tagline{margin-top:10px; color:#C4D2E6;}
-  .foot-links{display:flex; gap:22px;}
+  .foot-links{display:flex; gap:14px 22px; flex-wrap:wrap; justify-content:flex-end; max-width:100%;}
+  @media (max-width:700px){ .foot-links{justify-content:flex-start;} }
   .foot-links a{color:#9FB2CC; text-decoration:none;}
   .foot-links a:hover{color:#fff;}
   .foot-legal{margin-top:30px; padding-top:22px; border-top:1px solid var(--navy-3); font-size:12.5px; line-height:1.7;}
@@ -267,8 +268,9 @@
       <span class="wordmark">connex<span>li</span></span>
     </a>
     <nav class="nav-links" id="mobile-menu" aria-label="Main">
-      <a href="#how">How it works</a>
+      <a href="selling.html">Selling</a>
       <a href="buying.html">Buying</a>
+      <a href="professionals.html">Professionals</a>
       <a href="about.html">About</a>
       <a href="#faq">FAQ</a>
       <a href="https://app.connexli.com/login">Log in</a>
@@ -363,7 +365,7 @@
           <div><div class="pname">Jenna L.</div><div class="pmeta">★ 4.6 · 203 sales</div></div>
           <div class="pfee"><b>1.35%</b><span>Full marketing</span></div>
         </div>
-        <div class="pfoot">🔒 Proposals stay sealed until the window closes. Sample data shown.</div>
+        <div class="pfoot">🔒 Proposals stay sealed until the window closes — capped at 10 per round, so you're never overwhelmed. Sample data shown.</div>
       </div>
     </div>
   </section>
@@ -372,25 +374,25 @@
   <section class="aud">
     <div class="wrap aud-grid">
       <div class="aud-panel navy reveal" id="homeowners">
-        <h3>For homeowners</h3>
+        <h3>For home sellers &amp; buyers</h3>
         <ul>
           <li><span class="tick">✓</span>Free to use. No fees, no subscriptions, ever.</li>
-          <li><span class="tick">✓</span>Professionals compete on fee and service, so you see real options instead of one opinion.</li>
-          <li><span class="tick">✓</span>Private by design. Your address and contact info are hidden until you choose to share them.</li>
-          <li><span class="tick">✓</span>No obligation at any point. Walk away whenever you like.</li>
+          <li><span class="tick">✓</span>Selling? Listing agents compete on commission, marketing, and service. Buying? Buyer's agents compete on fees, tours, and expertise.</li>
+          <li><span class="tick">✓</span>Private by design. Your name and contact info are hidden until you choose to share them — on either side.</li>
+          <li><span class="tick">✓</span>Never overwhelming: up to 10 sealed proposals per round, with more on request. No obligation at any point.</li>
         </ul>
-        <p class="small">Selling first. Buying support arrives after launch.</p>
+        <p class="small">One account covers both sides of your move. <a href="selling.html" style="color:inherit; font-weight:600;">How selling works ›</a> · <a href="buying.html" style="color:inherit; font-weight:600;">How buying works ›</a></p>
         <a class="btn light" style="margin-top:18px;" href="https://app.connexli.com/register">Get started</a>
       </div>
       <div class="aud-panel light reveal" id="professionals">
         <h3>For professionals</h3>
         <ul>
-          <li><span class="tick">✓</span>Meet motivated sellers with clear timelines and priorities.</li>
+          <li><span class="tick">✓</span>Meet motivated sellers <b>and</b> verified buyers — two streams of clients, one account.</li>
           <li><span class="tick">✓</span>Sealed proposals. Competitors never see your pricing.</li>
-          <li><span class="tick">✓</span>Win on value: your experience, reviews, and service package appear next to your fee.</li>
-          <li><span class="tick">✓</span>Every professional is license-verified, so the platform stays credible for everyone.</li>
+          <li><span class="tick">✓</span>Win on value: your experience, track record, and service package appear next to your fee.</li>
+          <li><span class="tick">✓</span>Capped at 10 proposals per opportunity, so every proposal you write gets truly read.</li>
         </ul>
-        <p class="small">Founding member spots for the Utah pilot are limited.</p>
+        <p class="small">Founding member spots for the Utah pilot are limited. <a href="professionals.html" style="color:inherit; font-weight:600;">See the full workflow ›</a></p>
         <a class="btn" style="margin-top:18px;" href="https://app.connexli.com/register">Create your professional account</a>
       </div>
     </div>
@@ -467,6 +469,10 @@
           <p>Until you choose, professionals see only general details: area, home type, size, and price range. Your address and contact info are hidden until you choose to share them, and they are released only to the professional you select.</p>
         </details>
         <details>
+          <summary>How many proposals will I get?</summary>
+          <p>Up to 10 per round — enough competition to work in your favor, few enough that you'll actually read them all. If all 10 spots fill before your chosen window ends, the window closes early and your comparison is ready sooner. And if you want more options after reviewing, one tap opens a fresh round shown only to professionals who haven't proposed yet.</p>
+        </details>
+        <details>
           <summary>When and where does Connexli launch?</summary>
           <p>Connexli is live now across the state of Utah. Homeowners and real estate professionals can register today. More states are coming soon, and waitlist members hear first.</p>
         </details>
@@ -500,7 +506,7 @@
         </details>
         <details>
           <summary>For professionals: how do buyer profiles work?</summary>
-          <p>Buyer opportunities appear on your dashboard beside seller requests — anonymous snapshots with a verified readiness badge (Ready Now, Preparing) assigned from the buyer's actual financing answers. Buyers who are just researching don't enter the pool at all, so every profile you see is worth reading. Proposals are capped at 5 per buyer, sealed as always, and your template supports percentage, flat, hourly, and retainer structures plus a minimum fee — so your proposal can reflect what buyer representation actually costs you in time.</p>
+          <p>Buyer opportunities appear on your dashboard beside seller requests — anonymous snapshots with a verified readiness badge (Ready Now, Preparing) assigned from the buyer's actual financing answers. Buyers who are just researching don't enter the pool at all, so every profile you see is worth reading. Proposals are capped at 10 per round and the opportunity closes the moment it fills, sealed as always, and your template supports percentage, flat, hourly, and retainer structures plus a minimum fee — so your proposal can reflect what buyer representation actually costs you in time.</p>
         </details>
         <details>
           <summary>For professionals: what about buyers who already signed a Buyer Broker Agreement?</summary>
@@ -535,6 +541,9 @@
       </div>
       <nav class="foot-links" aria-label="Footer">
         <a href="#how">How it works</a>
+        <a href="selling.html">Selling</a>
+        <a href="buying.html">Buying</a>
+        <a href="professionals.html">Professionals</a>
         <a href="about.html">Why We Built Connexli</a>
         <a href="#waitlist">Join the waitlist</a>
         <a href="mailto:hello@connexli.com">Contact</a>

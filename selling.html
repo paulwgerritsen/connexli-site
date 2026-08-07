@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Selling a Home Works on Connexli — Let Listing Agents Compete</title>
+<meta name="description" content="Why comparing listing agents matters, what the traditional process gets wrong, and how Connexli's sealed proposals let you compare commission, marketing, and experience side by side — anonymously.">
+<meta property="og:title" content="For Home Sellers — Connexli">
+<meta property="og:description" content="Verified listing agents compete for your business with sealed proposals. Compare commission, marketing, and experience before you sign anything.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://connexli.com/selling.html">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A1B33; --navy-3:#132F57; --blue:#1565FF; --blue-dark:#0E4FD1;
+    --sky:#42B6FF; --lightblue:#B3D6FF; --paper:#F7F9FC; --ink:#16233A;
+    --muted:#5A6779; --line:#E1E7F0; --r-card:16px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Poppins',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:var(--paper); line-height:1.65;}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 24px;}
+  a{color:inherit;}
+  .btn{display:inline-block; border:none; cursor:pointer; text-decoration:none; text-align:center;
+    background:var(--blue); color:#fff; font-family:inherit; font-size:15.5px; font-weight:600;
+    padding:13px 28px; border-radius:999px; transition:background .18s ease;}
+  .btn:hover{background:var(--blue-dark);}
+  .btn.ghost{background:transparent; color:var(--navy); border:1.5px solid var(--line);}
+  .btn.ghost:hover{border-color:var(--navy);}
+  header{position:sticky; top:0; z-index:40; background:rgba(10,27,51,.92); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);}
+  .nav{height:68px; display:flex; align-items:center; justify-content:space-between; gap:20px;}
+  .brand{display:flex; align-items:center; gap:9px; text-decoration:none;}
+  .wordmark{font-size:21px; font-weight:700; color:#fff; letter-spacing:-.02em;}
+  .wordmark span{color:var(--sky);}
+  .nav-links{display:flex; gap:26px; align-items:center; margin-left:auto;}
+  .nav-links a{color:#C7D3E4; font-size:14.5px; text-decoration:none;}
+  .nav-links a:hover{color:#fff;}
+  .nav-cta{display:flex; align-items:center; gap:10px;}
+  .nav .btn{padding:10px 22px; font-size:14.5px;}
+  .menu-btn{display:none; background:none; border:none; cursor:pointer; padding:9px; border-radius:8px; color:#C7D3E4;}
+  .menu-btn:hover{color:#fff;}
+  .menu-btn svg{display:block;}
+  .menu-btn .icon-close{display:none;}
+  .menu-btn[aria-expanded="true"] .icon-open{display:none;}
+  .menu-btn[aria-expanded="true"] .icon-close{display:block;}
+  @media (max-width:860px){
+    .menu-btn{display:block;}
+    .nav-links{display:none; position:absolute; top:68px; left:0; right:0; flex-direction:column; align-items:stretch; gap:0;
+      background:var(--navy); padding:4px 24px 14px; border-bottom:1px solid rgba(255,255,255,.1); box-shadow:0 16px 28px rgba(10,27,51,.4);}
+    .nav-links.open{display:flex;}
+    .nav-links a{display:block; padding:14px 0; font-size:16px; border-bottom:1px solid rgba(255,255,255,.08);}
+    .nav-links a:last-child{border-bottom:none;}
+  }
+
+  .page-hero{background:linear-gradient(155deg, var(--navy) 55%, var(--navy-3)); color:#fff; text-align:center; padding:60px 24px 54px;}
+  .eyebrow{display:inline-block; font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--sky); margin-bottom:16px;}
+  .page-hero h1{font-size:clamp(27px, 3.3vw, 40px); font-weight:700; letter-spacing:-.02em; line-height:1.22; max-width:800px; margin:0 auto;}
+  .page-hero p.lead{max-width:640px; margin:18px auto 0; font-size:17px; color:#C4D2E6;}
+  .doors{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:28px;}
+  .doors .btn.light{background:#fff; color:var(--navy);}
+  .doors .btn.light:hover{background:var(--lightblue);}
+  .doors .btn.ghost{color:#fff; border-color:rgba(255,255,255,.4);}
+  .doors .btn.ghost:hover{border-color:#fff; background:rgba(255,255,255,.06);}
+  .doorsnote{margin-top:12px; font-size:13px; color:#9FB2CC;}
+
+  section.block{padding:54px 24px 10px;}
+  .block-inner{max-width:760px; margin:0 auto;}
+  .block h2{font-size:clamp(21px, 2.6vw, 28px); color:var(--navy); letter-spacing:-.02em; margin-bottom:12px;}
+  .block .kicker{font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--blue); display:block; margin-bottom:8px;}
+  .block p{font-size:16px; color:#3A4657; margin-bottom:14px;}
+  .callout{background:#fff; border:1px solid var(--line); border-left:4px solid var(--blue); border-radius:var(--r-card); padding:20px 24px; margin:18px 0; box-shadow:0 2px 12px rgba(10,27,51,.05);}
+  .callout p{margin:0; font-size:15.5px;}
+  ul.plain{margin:0 0 14px 22px;}
+  ul.plain li{font-size:16px; color:#3A4657; margin-bottom:8px;}
+
+  /* numbered steps */
+  .steps{counter-reset:step; margin:20px 0 6px;}
+  .step{display:flex; gap:16px; background:#fff; border:1px solid var(--line); border-radius:var(--r-card); padding:18px 20px; margin-bottom:12px; box-shadow:0 2px 12px rgba(10,27,51,.04);}
+  .step .n{counter-increment:step; flex:0 0 34px; height:34px; border-radius:50%; background:#EAF2FF; color:var(--blue); font-weight:700; display:flex; align-items:center; justify-content:center;}
+  .step .n::before{content:counter(step);}
+  .step b{color:var(--navy); display:block; margin-bottom:3px;}
+  .step p{font-size:14.5px; margin:0;}
+
+  /* compare dimensions */
+  .dims{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:18px 0;}
+  @media (max-width:760px){ .dims{grid-template-columns:1fr;} }
+  .dim{background:#fff; border:1px solid var(--line); border-radius:var(--r-card); padding:18px 20px;}
+  .dim b{color:var(--navy); display:block; margin-bottom:6px;}
+  .dim p{font-size:14px; margin:0;}
+
+  /* sample comparison */
+  .sample{background:var(--navy); padding:56px 24px; margin-top:44px;}
+  .sample h2{color:#fff; text-align:center;}
+  .sample .sub{color:#C4D2E6; text-align:center; max-width:620px; margin:10px auto 30px; font-size:15.5px;}
+  .prop-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; max-width:1000px; margin:0 auto;}
+  @media (max-width:860px){ .prop-grid{grid-template-columns:1fr; max-width:440px;} }
+  .prop{background:#fff; border-radius:var(--r-card); padding:22px; display:flex; flex-direction:column; gap:8px;}
+  .prop .who{font-weight:700; color:var(--navy);}
+  .prop .brok{font-size:12.5px; color:var(--muted);}
+  .prop .fee{font-size:23px; font-weight:700; color:var(--blue); margin-top:4px;}
+  .prop .feekind{font-size:12.5px; color:var(--muted); margin-top:-4px;}
+  .prop ul{margin:8px 0 0 18px; font-size:13.5px; color:#3A4657;}
+  .prop ul li{margin-bottom:5px;}
+  .prop .tag{align-self:flex-start; font-size:11px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; background:#EAF2FF; color:var(--blue); border-radius:999px; padding:4px 10px;}
+  .sample .note{color:#9FB2CC; text-align:center; font-size:12.5px; margin-top:20px;}
+
+  .finalcta{padding:64px 24px 84px; text-align:center;}
+  .finalcta h2{font-size:clamp(22px, 2.8vw, 30px); color:var(--navy); letter-spacing:-.02em;}
+  .note{font-size:13px; color:var(--muted); margin-top:14px;}
+  .note a{color:var(--blue);}
+
+  .sticky-cta{position:fixed; right:18px; bottom:18px; z-index:50; box-shadow:0 10px 26px rgba(10,27,51,.35); display:none;}
+  .sticky-cta.show{display:inline-block;}
+
+  footer{background:var(--navy); color:#9FB2CC; padding:36px 24px; font-size:12.5px; text-align:center; line-height:1.7;}
+  footer a{color:#C7D3E4;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="" height="24" style="display:block;">
+      <span class="wordmark">connex<span>li</span></span>
+    </a>
+    <nav class="nav-links" id="mobile-menu" aria-label="Main">
+      <a href="selling.html">Selling</a>
+      <a href="buying.html">Buying</a>
+      <a href="professionals.html">Professionals</a>
+      <a href="about.html">About</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="https://app.connexli.com/login">Log in</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn" href="https://app.connexli.com/register">Get started</a>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- TWO DOORS -->
+  <section class="page-hero">
+    <span class="eyebrow">For Home Sellers</span>
+    <h1>Selling your home is a six-figure decision.<br>Choosing your agent shouldn't take five minutes.</h1>
+    <p class="lead">On Connexli, verified listing agents compete for your business with sealed proposals — commission, marketing plan, and experience side by side. Your identity stays hidden until you choose.</p>
+    <div class="doors">
+      <a class="btn light" id="door-ready" href="https://app.connexli.com/register">I'm ready — start my request</a>
+      <a class="btn ghost" id="door-learn" href="#why">Show me how it works first</a>
+    </div>
+    <p class="doorsnote">Free · about 2 minutes · no obligation · anonymous until you connect</p>
+  </section>
+
+  <!-- 1. THE PROBLEM -->
+  <section class="block" id="why" data-section="why-compare">
+    <div class="block-inner">
+      <span class="kicker">1 · The traditional way has a blind spot</span>
+      <h2>Most sellers never compare at all</h2>
+      <p>The National Association of Realtors' own annual survey of home sellers has found, year after year, that roughly <b>8 in 10 sellers contact only one agent</b> before signing a listing agreement — usually someone a friend recommended. For the largest sale of most people's lives, there's no comparison step at all.</p>
+      <p>That's not carelessness. Until now there was no practical way to compare. Interviewing five agents means five phone calls, five living-room presentations, five follow-up sequences — and every agent you meet knows exactly who you are and starts calling. So sellers take the path of least resistance: the first agent, at whatever terms that agent proposes.</p>
+      <ul class="plain">
+        <li><b>Commission gets treated as fixed.</b> It isn't — it has always been negotiable, but it's hard to negotiate when you've only ever heard one number.</li>
+        <li><b>Marketing plans go unexamined.</b> Professional photos, drone video, 3D tours, open houses, social campaigns — some agents include them all, some don't. You only find out what you didn't get after your home sits.</li>
+        <li><b>Experience is taken on faith.</b> "I know this area" is easy to say. Transaction counts in your price range are harder to fake — and easy to compare when they're side by side.</li>
+      </ul>
+      <div class="callout"><p><b>The fix isn't working harder — it's flipping the direction.</b> Instead of you chasing agents one at a time, Connexli has agents come to you, in writing, in a format built to be compared.</p></div>
+    </div>
+  </section>
+
+  <!-- 2. HOW IT WORKS -->
+  <section class="block" data-section="how-it-works">
+    <div class="block-inner">
+      <span class="kicker">2 · How Connexli works</span>
+      <h2>Four steps, and you never pick up the phone</h2>
+      <div class="steps">
+        <div class="step"><span class="n"></span><div><b>Describe your home — anonymously.</b><p>About two minutes: property type, area, size, condition, price range, and what matters most to you (lowest commission, fastest sale, best marketing…). Your name, address, and contact info are never shown to agents.</p></div></div>
+        <div class="step"><span class="n"></span><div><b>Choose your proposal window.</b><p>24 hours to 7 days — your timeline. Verified listing agents near you are notified and invited to compete.</p></div></div>
+        <div class="step"><span class="n"></span><div><b>Sealed proposals arrive — up to 10.</b><p>Each agent submits their commission, marketing plan, services, experience, and cancellation terms. Sealed means sealed: no agent sees another's offer, so each brings their best terms first. We cap every round at 10 proposals so you get real choice without drowning in it — and if all 10 spots fill early, the window closes early and your results are ready sooner.</p></div></div>
+        <div class="step"><span class="n"></span><div><b>Compare, shortlist, and connect with one.</b><p>Everything unlocks at once, side by side. Want more options after reviewing? Open another round — shown only to agents who haven't proposed yet. When you choose, your contact info goes to that one agent only.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHAT YOU COMPARE -->
+  <section class="block" data-section="what-you-compare">
+    <div class="block-inner">
+      <span class="kicker">3 · Side by side beats one at a time</span>
+      <h2>Six things you'll finally see next to each other</h2>
+      <div class="dims">
+        <div class="dim"><b>Commission</b><p>Percentage or flat fee, with an estimated dollar amount for your price range — the number that changes your bottom line most.</p></div>
+        <div class="dim"><b>Marketing plan</b><p>Photos, drone video, 3D tours, staging, open houses, social and print campaigns — spelled out, not implied.</p></div>
+        <div class="dim"><b>Experience</b><p>Seller-side transaction counts from the last 12 months, reported by the professional, shown next to their fee.</p></div>
+        <div class="dim"><b>Communication</b><p>How they'll work with you and keep you updated — visible in each proposal before you commit to anyone.</p></div>
+        <div class="dim"><b>Availability &amp; services</b><p>What's actually included, from staging consults to open houses — so a low fee with no services doesn't masquerade as a bargain.</p></div>
+        <div class="dim"><b>Cancellation terms</b><p>Cancel anytime? 30-day notice? Locked for the listing term? The clause most sellers never think to ask about, compared up front.</p></div>
+      </div>
+      <p>Every professional on Connexli passes license verification before they can send a single proposal, and you're never obligated to choose any of them. Comparing costs you nothing — not even your privacy.</p>
+    </div>
+  </section>
+
+  <!-- 4. SAMPLE COMPARISON -->
+  <section class="sample" data-section="sample-comparison">
+    <div class="wrap">
+      <h2>What you'll actually receive</h2>
+      <p class="sub">A sample of a Connexli sealed-proposal comparison. Thirty seconds here explains it better than any paragraph — this is the moment sellers say "oh, I get it."</p>
+      <div class="prop-grid">
+        <div class="prop">
+          <span class="tag">Sample proposal</span>
+          <span class="who">Agent A</span>
+          <span class="brok">Verified · 19 seller closings last 12 mo</span>
+          <span class="fee">2.5%</span>
+          <span class="feekind">est. $15,625 on a $625k sale</span>
+          <ul>
+            <li>Pro photos + drone video + 3D tour</li>
+            <li>Two open houses + social campaign</li>
+            <li>Cancel anytime, no fee</li>
+          </ul>
+        </div>
+        <div class="prop">
+          <span class="tag">Sample proposal</span>
+          <span class="who">Agent B</span>
+          <span class="brok">Verified · 31 seller closings last 12 mo</span>
+          <span class="fee">$9,500</span>
+          <span class="feekind">flat fee, any sale price</span>
+          <ul>
+            <li>Pro photos + staging consult</li>
+            <li>Open house every weekend until offer</li>
+            <li>30-day written notice to cancel</li>
+          </ul>
+        </div>
+        <div class="prop">
+          <span class="tag">Sample proposal</span>
+          <span class="who">Agent C</span>
+          <span class="brok">Verified · 12 seller closings last 12 mo</span>
+          <span class="fee">2%</span>
+          <span class="feekind">est. $12,500 on a $625k sale</span>
+          <ul>
+            <li>Pro photos + print marketing</li>
+            <li>Luxury + acreage specialist</li>
+            <li>Cancel anytime, no fee</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">Illustrative sample, not real agents or guaranteed terms. Your proposals will state each agent's actual fees, services, and experience.</p>
+    </div>
+  </section>
+
+  <!-- 5. PRIVACY & CONTROL -->
+  <section class="block" data-section="privacy">
+    <div class="block-inner">
+      <span class="kicker">4 · You stay in control the whole way</span>
+      <h2>Anonymous until you say otherwise. No obligation, ever.</h2>
+      <ul class="plain">
+        <li><b>Agents never see your identity while they compete.</b> They see your home's profile — type, area, size, price range — never your name, exact address, email, or phone. There is nothing to cold-call.</li>
+        <li><b>Your information goes to one agent only.</b> When you connect with your chosen professional, they alone receive your contact details. The other nine never learn who you were.</li>
+        <li><b>No proposal binds you.</b> You can review all ten, shortlist two, and still walk away. The listing agreement — the real commitment — is signed later, directly with the brokerage you choose, outside Connexli.</li>
+        <li><b>Every professional is license-verified</b> against state records before they can compete for anyone's business.</li>
+      </ul>
+      <div class="callout"><p><b>Why we cap each round at 10 proposals:</b> more isn't better past a point — it's paralysis. Ten sealed proposals is enough competition to move fees and quality in your favor, and few enough that you'll actually read them all. Want more after that? One tap opens a fresh round for agents who haven't proposed yet.</p></div>
+    </div>
+  </section>
+
+  <!-- 6. CTA -->
+  <section class="block" data-section="start" style="padding-bottom:0;">
+    <div class="block-inner" style="text-align:center;">
+      <span class="kicker">5 · When you're ready</span>
+      <h2>Two minutes. Anonymous. Free. No obligation.</h2>
+      <p style="max-width:560px; margin-left:auto; margin-right:auto;">Describe your home, pick your window, and let verified listing agents show you — in writing — why they should earn your business.</p>
+      <p style="margin-top:18px;"><a class="btn" href="https://app.connexli.com/register">Start my seller request</a></p>
+    </div>
+  </section>
+
+  <section class="finalcta">
+    <div class="wrap" style="max-width:640px;">
+      <h2>Buying your next home too?</h2>
+      <p style="color:var(--muted); font-size:16px; margin-top:10px;">Connexli works on both sides of your move. Verified buyer's agents compete for your business the same way — sealed proposals, anonymous until you choose, one account for both.</p>
+      <p style="margin-top:22px;"><a class="btn ghost" href="buying.html">See how buying works</a></p>
+      <p class="note">Already have an account? <a href="https://app.connexli.com/login">Log in</a></p>
+    </div>
+  </section>
+</main>
+
+<a class="btn sticky-cta" id="stickyCta" href="https://app.connexli.com/register">Start my seller request</a>
+
+<footer>
+  Connexli is not a real estate brokerage. Representation agreements are signed directly with each professional's brokerage.<br>
+  <a href="index.html">Home</a> · <a href="selling.html">Selling</a> · <a href="buying.html">Buying</a> · <a href="professionals.html">Professionals</a> · <a href="about.html">Why We Built Connexli</a> · <a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a><br>
+  Live in Utah · © 2026 Connexli
+</footer>
+
+<script>
+  /* ---- Analytics (PostHog) ---- Paste the same Project API key ("phc_...") used in index.html. Empty = analytics off. */
+  const POSTHOG_KEY = "";
+  if (POSTHOG_KEY) {
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset identify alias group set_config".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init(POSTHOG_KEY, { api_host: 'https://us.i.posthog.com', persistence: 'memory' });
+  }
+
+  /* ---- Mobile menu ---- */
+  const menuBtn = document.querySelector('.menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  function setMenu(open){ menu.classList.toggle('open', open); menuBtn.setAttribute('aria-expanded', String(open)); }
+  menuBtn.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') setMenu(false); });
+
+  /* ---- Two-door + section analytics ---- */
+  const track = (name, props) => { if (POSTHOG_KEY && window.posthog) posthog.capture(name, props); };
+  document.getElementById('door-ready').addEventListener('click', () => track('seller_door', { door: 'ready' }));
+  document.getElementById('door-learn').addEventListener('click', () => track('seller_door', { door: 'learn' }));
+  const seen = new Set();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (en.isIntersecting && !seen.has(en.target.dataset.section)) {
+        seen.add(en.target.dataset.section);
+        track('seller_funnel_section_viewed', { section: en.target.dataset.section });
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('[data-section]').forEach(el => io.observe(el));
+
+  /* ---- Sticky CTA ---- */
+  const sticky = document.getElementById('stickyCta');
+  window.addEventListener('scroll', () => {
+    sticky.classList.toggle('show', window.scrollY > 600 && (window.innerHeight + window.scrollY) < document.body.scrollHeight - 700);
+  }, { passive: true });
+</script>
+</body>
+</html>
