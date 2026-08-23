@@ -419,12 +419,20 @@
       <div class="wl-card reveal">
         <h2>Not in Utah? Be first in your state</h2>
         <p class="lead">Connexli is live across Utah today. If you're outside Utah, join the waitlist and we'll email you the moment we launch in your state.</p>
-        <form id="wlForm" novalidate>
+        <!-- Posts straight to Connexli (Paul, Aug 23) — no email step, no
+             third-party form service. The state is a standardized picker so
+             the data can be grouped reliably. -->
+        <form id="wlForm" method="POST" action="https://app.connexli.com/waitlist">
+          <div style="position:absolute; left:-9999px;" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
           <div>
             <label for="role">I am a…</label>
             <select id="role" name="role" required>
               <option value="" selected disabled>Choose one</option>
               <option>Homeowner thinking about selling</option>
+              <option>Buyer looking for a home</option>
               <option>Real estate professional</option>
               <option>Just curious</option>
             </select>
@@ -436,7 +444,10 @@
             </div>
             <div>
               <label for="state">Your state</label>
-              <input type="text" id="state" name="state" autocomplete="address-level1" placeholder="e.g. Idaho">
+              <select id="state" name="state" autocomplete="address-level1" required>
+                <option value="" selected disabled>Choose your state…</option>
+                <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>District of Columbia</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option><option>Other / outside the U.S.</option>
+              </select>
             </div>
           </div>
           <div class="form-msg" id="formMsg" role="status"></div>
@@ -562,7 +573,7 @@
         <a href="professionals.html">Professionals</a>
         <a href="about.html">Why We Built Connexli</a>
         <a href="#waitlist">Join the waitlist</a>
-        <a href="mailto:hello@connexli.com">Contact</a>
+        <a href="https://app.connexli.com/contact">Contact</a>
       </nav>
     </div>
     <p class="foot-legal">© 2026 Connexli. All rights reserved. Connexli is not a real estate brokerage and does not provide brokerage services. Representation agreements are signed directly with each professional's brokerage. <a href="terms.html" style="color:#9FB2CC;">Terms of Service</a> · <a href="privacy.html" style="color:#9FB2CC;">Privacy Policy</a></p>
@@ -582,46 +593,23 @@
     posthog.init(POSTHOG_KEY, { api_host: 'https://us.i.posthog.com', persistence: 'memory' });
   }
 
-  /* ---- Waitlist form ----
-     SETUP (5 minutes): create a free account at formspree.io, make a new form,
-     and paste its ID below (looks like "mqkvabcd"). Until then, the form shows
-     a friendly fallback asking visitors to email hello@connexli.com. */
-  const FORMSPREE_ID = "";
-
+  /* ---- Waitlist form (Paul, Aug 23) ----
+     Submits directly to app.connexli.com/waitlist, which saves the signup
+     and shows the confirmation. Client-side check is a courtesy only —
+     the server validates everything again. */
   const form = document.getElementById('wlForm');
   const msg = document.getElementById('formMsg');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  form.addEventListener('submit', (e) => {
     const email = document.getElementById('email').value.trim();
     const role = document.getElementById('role').value;
-    if(!role || !email || !email.includes('@')){
+    const state = document.getElementById('state').value;
+    if(!role || !state || !email || !email.includes('@')){
+      e.preventDefault();
       msg.className = 'form-msg err';
-      msg.textContent = 'Please choose a role and enter a valid email address.';
+      msg.textContent = 'Please choose who you are, enter a valid email address, and pick your state.';
       return;
     }
-    if(!FORMSPREE_ID){
-      msg.className = 'form-msg ok';
-      msg.innerHTML = 'Almost there! Email <a href="mailto:hello@connexli.com?subject=Waitlist">hello@connexli.com</a> and we\'ll add you to the list.';
-      return;
-    }
-    const btn = document.getElementById('wlBtn');
-    btn.disabled = true; btn.textContent = 'Joining…';
-    try{
-      const res = await fetch('https://formspree.io/f/'+FORMSPREE_ID, {
-        method:'POST',
-        headers:{'Accept':'application/json','Content-Type':'application/json'},
-        body: JSON.stringify({ role, email, state: document.getElementById('state').value.trim() })
-      });
-      if(!res.ok) throw new Error();
-      msg.className = 'form-msg ok';
-      msg.textContent = "You're on the list! We'll email you when Connexli opens in your area.";
-      form.reset();
-    }catch{
-      msg.className = 'form-msg err';
-      msg.innerHTML = 'Something went wrong. Please email <a href="mailto:hello@connexli.com">hello@connexli.com</a> instead.';
-    }finally{
-      btn.disabled = false; btn.textContent = 'Join the waitlist';
-    }
+    document.getElementById('wlBtn').textContent = 'Joining…';
   });
 
   /* ---- Scroll reveal (respects reduced motion via CSS gating) ---- */
