@@ -401,8 +401,8 @@
   <div class="screen" id="s-step4"><div class="narrow">
     <button class="back" onclick="go('s-step3')">‹ Back</button>
     <div class="steps"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i></i></div>
-    <h1>What matters most?</h1>
-    <p class="sub">Pick up to two. Professionals tailor their proposals to your priorities.</p>
+    <h1>When are you hoping to list your home?</h1>
+    <p class="sub">Choose the closest fit — it helps professionals plan their proposal.</p>
     <div class="choice" id="prioChoices"></div>
     <button class="btn" id="step4btn" disabled onclick="go('s-step5')">Continue</button>
   </div></div>
@@ -411,9 +411,8 @@
   <div class="screen" id="s-step5"><div class="narrow">
     <button class="back" onclick="go('s-step4')">‹ Back</button>
     <div class="steps"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i></div>
-    <h1>Choose your proposal window</h1>
-    <p class="sub">Professionals can submit sealed proposals until the window closes. Then you see everything at once.</p>
-    <div class="choice" id="windowChoices"></div>
+    <h1>Get your proposals</h1>
+    <p class="sub">Professionals have up to 48 hours to respond. You'll receive up to 10 proposals to compare. If all 10 spots fill sooner, your proposals will be ready right away.</p>
     <div class="privacy">
       <b>Privacy protected</b>
       <li>Exact address hidden</li>
@@ -432,8 +431,8 @@
         <div class="sumrow"><span>Property</span><span id="sumProp">Single Family · Farmington, UT 84025</span></div>
         <div class="sumrow"><span>Size</span><span id="sumSize">2,500–3,000 sq ft · 4 bd · 3 ba</span></div>
         <div class="sumrow"><span>Price range</span><span id="sumPrice">$750k–$1M</span></div>
-        <div class="sumrow"><span>Your priorities</span><span id="sumPrio">Best marketing</span></div>
-        <div class="sumrow"><span>Window</span><span id="sumWin">72 hours</span></div>
+        <div class="sumrow"><span>Hoping to list</span><span id="sumPrio">1–3 months</span></div>
+        <div class="sumrow"><span>Window</span><span id="sumWin">Up to 48 hours or 10 proposals</span></div>
       </div>
       <div class="card" style="text-align:center;">
         <div style="font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:.7px;">Proposal window closes in</div>
@@ -530,13 +529,12 @@
     </div>
     <h2 style="margin-top:22px;">New opportunity</h2>
     <div class="card opp" style="margin-top:10px; max-width:640px;">
-      <span class="closebadge" id="oppClose">⏱ Proposals close in 2 days 17 hrs</span>
+      <span class="closebadge" id="oppClose">⏱ Proposals close in 1 day 17 hrs</span>
       <div class="sumrow"><span>Location</span><span>Farmington, UT 84025</span></div>
       <div class="sumrow"><span>Property</span><span>Single Family · 2,500–3,000 sq ft</span></div>
       <div class="sumrow"><span>Beds / Baths</span><span>4 bd · 3 ba · Built 2000–2009</span></div>
       <div class="sumrow"><span>Price range</span><span>$750k–$1M</span></div>
-      <div class="sumrow"><span>Timeline</span><span>30–90 days</span></div>
-      <div class="sumrow"><span>Seller priorities</span><span>Best marketing + value</span></div>
+      <div class="sumrow"><span>Hoping to list</span><span>1–3 months</span></div>
       <div class="sealed" style="margin-top:12px;"><span class="lock">🔒</span><span>Sealed process: you won't see other professionals' proposals, and they won't see yours. The homeowner's identity is hidden until they shortlist you.</span></div>
       <button class="btn" id="oppBtn" onclick="go('a-build')">Submit a proposal</button>
     </div>
@@ -546,7 +544,7 @@
   <div class="screen" id="a-build"><div class="narrow">
     <button class="back" onclick="go('a-dash')">‹ Back to opportunities</button>
     <h1>Proposal builder</h1>
-    <p class="sub">Farmington single family · $750k–$1M · closes in 2 days 17 hrs</p>
+    <p class="sub">Farmington single family · $750k–$1M · closes in 1 day 17 hrs</p>
     <label class="f">Compensation type</label>
     <div class="toggle">
       <button id="feePct" class="on" onclick="setFeeType('pct')">% of sale price</button>
@@ -624,9 +622,9 @@ const money = n => '$'+n.toLocaleString();
 /* ================= STATE ================= */
 let state = {
   role:'seller', screen:'s-home', type:null, prios:[],
-  win:'72', winLabel:'72 hours',
+  win:'48', winLabel:'48 hours',
   launched:false, revealed:false, shortlist:new Set(),
-  secs:0, total:72*3600, count:3,
+  secs:0, total:48*3600, count:3,
   feeType:'pct', svcs:new Set(['Professional photos','Drone video','2 open houses']),
   agentVerified:false, agentSubmitted:false,
 };
@@ -668,53 +666,33 @@ TYPES.forEach(tp=>{
   tc.appendChild(btn);
 });
 
-const PRIOS = ['Lowest commission','Most experienced','Fastest sale','Best marketing','Highest sale price'];
+/* Listing timeline (Sep 30) — replaces "What matters most?"; one choice. */
+const PRIOS = ['ASAP','1–3 months','3–6 months','6–12 months','Just researching'];
 const pc = document.getElementById('prioChoices');
 PRIOS.forEach(pr=>{
   const btn = document.createElement('button');
   btn.className='opt'; btn.innerHTML = '<span class="box"></span>'+pr;
   btn.onclick = ()=>{
-    if(btn.classList.contains('sel')){ btn.classList.remove('sel'); state.prios = state.prios.filter(x=>x!==pr); }
-    else if(state.prios.length < 2){ btn.classList.add('sel'); state.prios.push(pr); }
+    pc.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
+    btn.classList.add('sel'); state.prios = [pr];
     document.getElementById('step4btn').disabled = state.prios.length===0;
   };
   pc.appendChild(btn);
 });
 
-/* Proposal windows — 72h default, per Paul */
-const WINDOWS = [
-  {key:'48',  hours:48,  label:'48 hours', tag:'Fast track',
-   desc:"Great if you're ready to meet agents this week.", rec:false},
-  {key:'72',  hours:72,  label:'72 hours', tag:'Recommended',
-   desc:'Our recommendation — gives agents enough time to prepare thoughtful proposals.', rec:true},
-  {key:'168', hours:168, label:'7 days',   tag:'Extend',
-   desc:"Best for luxury homes, unique properties, rural areas, or if you're not in a hurry.", rec:false},
-];
-const wc = document.getElementById('windowChoices');
-WINDOWS.forEach(w=>{
-  const btn = document.createElement('button');
-  btn.className='opt'+(w.rec?' sel':'');
-  btn.innerHTML = (w.rec?'<span class="rec">RECOMMENDED</span>':'')+
-    '<span class="dot"></span><span><b style="color:var(--navy)">'+w.label+' · '+w.tag+'</b><br>'+
-    '<span style="font-size:12.5px;color:var(--muted)">'+w.desc+'</span></span>';
-  btn.onclick = ()=>{
-    state.win = w.key; state.winLabel = w.label;
-    wc.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
-    btn.classList.add('sel');
-  };
-  wc.appendChild(btn);
-});
+/* One standard proposal window (Sep 30): up to 48 hours or 10 proposals. */
+const WINDOWS = [{key:'48', hours:48, label:'Up to 48 hours or 10 proposals', tag:'Standard'}];
 
 function launchRequest(){
   state.launched = true;
-  const w = WINDOWS.find(x=>x.key===state.win) || WINDOWS[1];
+  const w = WINDOWS[0];
   state.total = w.hours*3600;
   state.secs  = Math.round(state.total*0.49); // demo: window already half elapsed so the countdown feels real
   document.getElementById('sumProp').textContent = (state.type||'Single Family')+' · '+(document.getElementById('city').value||'Farmington')+', UT '+(document.getElementById('zip').value||'84025');
   document.getElementById('sumSize').textContent = document.getElementById('sqft').value+' · '+document.getElementById('beds').value+' bd · '+document.getElementById('baths').value+' ba';
   document.getElementById('sumPrice').textContent = document.getElementById('price').value;
-  document.getElementById('sumPrio').textContent = state.prios.length? state.prios.join(' + ') : 'Balanced';
-  document.getElementById('sumWin').textContent = w.label+' ('+w.tag+')';
+  document.getElementById('sumPrio').textContent = state.prios[0] || '1–3 months';
+  document.getElementById('sumWin').textContent = w.label;
   go('s-dash');
 }
 
