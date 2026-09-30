@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Considering FSBO? Compare Your Options | Connexli</title>
+<meta name="description" content="Thinking about selling your home yourself? Compare fees and services from real estate professionals through Connexli before deciding what works best for you.">
+<meta name="keywords" content="for sale by owner, FSBO, selling a home without an agent, compare real estate agent fees, compare real estate professionals, real estate commission options">
+<link rel="canonical" href="https://connexli.com/fsbo">
+<meta property="og:title" content="Considering FSBO? Compare Your Options | Connexli">
+<meta property="og:description" content="Thinking about selling your home yourself? See what local real estate professionals would charge — and what they'd include — before you decide. No obligation to choose an agent.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://connexli.com/fsbo">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!--
+  /fsbo — landing page for homeowners considering selling on their own
+  (Paul, Sep 28 2026). Informational only: there is no FSBO product, account
+  type, or workflow. Every call-to-action enters the EXISTING seller request
+  flow (app.connexli.com/register) with ?source=fsbo so the app can count
+  seller requests that started here. Styles below are copied from
+  selling.html so the page matches the rest of the site exactly.
+-->
+<style>
+  :root{
+    --navy:#0A1B33; --navy-3:#132F57; --blue:#1565FF; --blue-dark:#0E4FD1;
+    --sky:#42B6FF; --lightblue:#B3D6FF; --paper:#F7F9FC; --ink:#16233A;
+    --muted:#5A6779; --line:#E1E7F0; --r-card:16px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Poppins',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:var(--paper); line-height:1.65;}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 24px;}
+  a{color:inherit;}
+  .btn{display:inline-block; border:none; cursor:pointer; text-decoration:none; text-align:center;
+    background:var(--blue); color:#fff; font-family:inherit; font-size:15.5px; font-weight:600;
+    padding:13px 28px; border-radius:999px; transition:background .18s ease;}
+  .btn:hover{background:var(--blue-dark);}
+  .btn.ghost{background:transparent; color:var(--navy); border:1.5px solid var(--line);}
+  .btn.ghost:hover{border-color:var(--navy);}
+  header{position:sticky; top:0; z-index:40; background:rgba(10,27,51,.92); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);}
+  .nav{height:68px; display:flex; align-items:center; justify-content:space-between; gap:20px;}
+  .brand{display:flex; align-items:center; gap:9px; text-decoration:none;}
+  .wordmark{font-size:21px; font-weight:700; color:#fff; letter-spacing:-.02em;}
+  .wordmark span{color:var(--sky);}
+  .nav-links{display:flex; gap:26px; align-items:center; margin-left:auto;}
+  .nav-links a{color:#C7D3E4; font-size:14.5px; text-decoration:none;}
+  .nav-links a:hover{color:#fff;}
+  .nav-cta{display:flex; align-items:center; gap:10px;}
+  .nav .btn{padding:10px 22px; font-size:14.5px;}
+  .menu-btn{display:none; background:none; border:none; cursor:pointer; padding:9px; border-radius:8px; color:#C7D3E4;}
+  .menu-btn:hover{color:#fff;}
+  .menu-btn svg{display:block;}
+  .menu-btn .icon-close{display:none;}
+  .menu-btn[aria-expanded="true"] .icon-open{display:none;}
+  .menu-btn[aria-expanded="true"] .icon-close{display:block;}
+  @media (max-width:860px){
+    .menu-btn{display:block;}
+    .nav-links{display:none; position:absolute; top:68px; left:0; right:0; flex-direction:column; align-items:stretch; gap:0;
+      background:var(--navy); padding:4px 24px 14px; border-bottom:1px solid rgba(255,255,255,.1); box-shadow:0 16px 28px rgba(10,27,51,.4);}
+    .nav-links.open{display:flex;}
+    .nav-links a{display:block; padding:14px 0; font-size:16px; border-bottom:1px solid rgba(255,255,255,.08);}
+    .nav-links a:last-child{border-bottom:none;}
+  }
+
+  .page-hero{background:linear-gradient(155deg, var(--navy) 55%, var(--navy-3)); color:#fff; text-align:center; padding:60px 24px 54px;}
+  .eyebrow{display:inline-block; font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--sky); margin-bottom:16px;}
+  .page-hero h1{font-size:clamp(27px, 3.3vw, 40px); font-weight:700; letter-spacing:-.02em; line-height:1.22; max-width:800px; margin:0 auto;}
+  .page-hero .subhead{font-size:clamp(20px, 2.3vw, 26px); font-weight:600; color:var(--sky); letter-spacing:-.01em; margin-top:8px;}
+  .page-hero p.lead{max-width:640px; margin:18px auto 0; font-size:17px; color:#C4D2E6;}
+  .page-hero p.lead + p.lead{margin-top:12px;}
+  .doors{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:28px;}
+  .doors .btn.light{background:#fff; color:var(--navy);}
+  .doors .btn.light:hover{background:var(--lightblue);}
+  .doors .btn.ghost{color:#fff; border-color:rgba(255,255,255,.4);}
+  .doors .btn.ghost:hover{border-color:#fff; background:rgba(255,255,255,.06);}
+  .doorsnote{margin-top:12px; font-size:13px; color:#9FB2CC;}
+
+  section.block{padding:54px 24px 10px;}
+  .block-inner{max-width:760px; margin:0 auto;}
+  .block h2{font-size:clamp(21px, 2.6vw, 28px); color:var(--navy); letter-spacing:-.02em; margin-bottom:12px;}
+  .block .kicker{font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--blue); display:block; margin-bottom:8px;}
+  .block p{font-size:16px; color:#3A4657; margin-bottom:14px;}
+  .callout{background:#fff; border:1px solid var(--line); border-left:4px solid var(--blue); border-radius:var(--r-card); padding:20px 24px; margin:18px 0; box-shadow:0 2px 12px rgba(10,27,51,.05);}
+  .callout p{margin:0; font-size:15.5px;}
+
+  /* numbered steps (same component as selling.html) */
+  .steps{counter-reset:step; margin:20px 0 6px;}
+  .step{display:flex; gap:16px; background:#fff; border:1px solid var(--line); border-radius:var(--r-card); padding:18px 20px; margin-bottom:12px; box-shadow:0 2px 12px rgba(10,27,51,.04);}
+  .step .n{counter-increment:step; flex:0 0 34px; height:34px; border-radius:50%; background:#EAF2FF; color:var(--blue); font-weight:700; display:flex; align-items:center; justify-content:center;}
+  .step .n::before{content:counter(step);}
+  .step b{color:var(--navy); display:block; margin-bottom:3px;}
+  .step p{font-size:14.5px; margin:0;}
+
+  /* benefit cards (the .dim card style from selling.html, 2 x 2 with an icon) */
+  .dims{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:18px 0;}
+  @media (max-width:760px){ .dims{grid-template-columns:1fr;} }
+  .dim{background:#fff; border:1px solid var(--line); border-radius:var(--r-card); padding:20px 22px; box-shadow:0 2px 12px rgba(10,27,51,.04);}
+  .dim .ic{width:40px; height:40px; border-radius:12px; background:#EAF2FF; color:var(--blue); display:flex; align-items:center; justify-content:center; margin-bottom:12px;}
+  .dim b{color:var(--navy); display:block; margin-bottom:6px; font-size:16.5px;}
+  .dim p{font-size:14.5px; margin:0;}
+
+  /* feature statement (navy band, same treatment as the sample section on selling.html) */
+  .feature{background:var(--navy); padding:64px 24px; margin-top:48px; text-align:center;}
+  .feature blockquote{max-width:860px; margin:0 auto; color:#fff; font-size:clamp(24px, 3.2vw, 36px); font-weight:700; letter-spacing:-.02em; line-height:1.28;}
+  .feature blockquote span{color:var(--sky);}
+  .feature p{color:#C4D2E6; max-width:620px; margin:18px auto 0; font-size:16.5px;}
+
+  .finalcta{padding:64px 24px 84px; text-align:center;}
+  .page-hero h1, .finalcta h2, .feature blockquote{text-wrap:balance;}
+  .finalcta h2{font-size:clamp(22px, 2.8vw, 30px); color:var(--navy); letter-spacing:-.02em;}
+  .note{font-size:13px; color:var(--muted); margin-top:14px;}
+  .note a{color:var(--blue);}
+
+  .sticky-cta{position:fixed; right:18px; bottom:18px; z-index:50; box-shadow:0 10px 26px rgba(10,27,51,.35); display:none;}
+  .sticky-cta.show{display:inline-block;}
+
+  footer{background:var(--navy); color:#9FB2CC; padding:36px 24px; font-size:12.5px; text-align:center; line-height:1.7;}
+  footer a{color:#C7D3E4;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/index.html">
+      <img src="/logo.png" alt="" height="24" style="display:block;">
+      <span class="wordmark">connex<span>li</span></span>
+    </a>
+    <nav class="nav-links" id="mobile-menu" aria-label="Main">
+      <a href="/selling.html">Selling</a>
+      <a href="/buying.html">Buying</a>
+      <a href="/professionals.html">Professionals</a>
+      <a href="/about.html">About</a>
+      <a href="/index.html#faq">FAQ</a>
+      <a href="https://app.connexli.com/login">Log in</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn fsbo-cta" data-cta="header" href="https://app.connexli.com/register?source=fsbo">Get started</a>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="page-hero">
+    <span class="eyebrow">Considering selling on your own?</span>
+    <h1>Thinking About Selling Your Home Yourself?</h1>
+    <p class="subhead">Keep your options open.</p>
+    <p class="lead">Selling your home yourself can give you more control and may help reduce selling costs. But considering FSBO doesn't mean you have to rule out working with a real estate professional.</p>
+    <p class="lead">Connexli lets you compare proposals from local real estate professionals — including their fees and services — before deciding what makes the most sense for you.</p>
+    <div class="doors">
+      <a class="btn light fsbo-cta" data-cta="hero" id="fsbo-cta-hero" href="https://app.connexli.com/register?source=fsbo">See What Agents Would Offer</a>
+      <a class="btn ghost" href="#how">How it works</a>
+    </div>
+    <p class="doorsnote">Compare your options. No obligation to choose an agent.</p>
+  </section>
+
+  <!-- BEFORE YOU DECIDE -->
+  <section class="block" id="compare">
+    <div class="block-inner">
+      <span class="kicker">Before you decide, compare</span>
+      <h2>Before You Decide, See What's Available</h2>
+      <p>You may be considering selling on your own because you want to keep more of your home's equity. That's understandable.</p>
+      <p>But real estate fees and services can vary.</p>
+      <p>With Connexli, you can let local real estate professionals show you what they would offer before you make your decision.</p>
+      <div class="callout"><p><b>Compare the cost. Compare the services. Then decide what's right for you.</b></p></div>
+    </div>
+  </section>
+
+  <!-- WHY CONNEXLI -->
+  <section class="block" id="why">
+    <div class="block-inner">
+      <span class="kicker">Why use Connexli if you're considering FSBO?</span>
+      <h2>Information first. Decision second.</h2>
+      <div class="dims">
+        <div class="dim">
+          <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
+          <b>Compare Fees</b>
+          <p>See what different real estate professionals would charge instead of assuming what representation will cost.</p>
+        </div>
+        <div class="dim">
+          <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3.5 6 1 1 2-2M3.5 12l1 1 2-2M3.5 18l1 1 2-2"/></svg></div>
+          <b>Compare Services</b>
+          <p>Understand what may be included, such as photography, marketing, open houses, communication, and other services.</p>
+        </div>
+        <div class="dim">
+          <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></div>
+          <b>No Obligation</b>
+          <p>Receiving proposals doesn't require you to select or hire anyone.</p>
+        </div>
+        <div class="dim">
+          <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg></div>
+          <b>Keep Your Options Open</b>
+          <p>If a proposal makes sense, you can connect with that professional. If not, you can continue exploring other options.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE STATEMENT -->
+  <section class="feature">
+    <blockquote>Before you decide an agent costs too much, <span>find out what agents would actually charge.</span></blockquote>
+    <p>Connexli gives you a way to compare real proposals rather than guessing what professional representation might cost.</p>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="block" id="how">
+    <div class="block-inner">
+      <span class="kicker">How it works</span>
+      <h2>Four simple steps</h2>
+      <div class="steps">
+        <div class="step"><span class="n"></span><div><b>Tell us about your home</b><p>Create a seller request with basic information about your property and what you're looking for.</p></div></div>
+        <div class="step"><span class="n"></span><div><b>Receive proposals</b><p>Real estate professionals can submit proposals showing their fees, services, and what they offer.</p></div></div>
+        <div class="step"><span class="n"></span><div><b>Compare your options</b><p>Review proposals side by side so you can better understand the differences.</p></div></div>
+        <div class="step"><span class="n"></span><div><b>Connect if you choose</b><p>If you find a professional who fits what you're looking for, connect with them. If not, there's no obligation to select anyone.</p></div></div>
+      </div>
+      <p class="note" style="margin-top:6px;">Every professional's license is verified before they can send a proposal, and your name and contact details stay private until you choose to connect. <a href="/selling.html">More about selling with Connexli</a></p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="finalcta">
+    <div class="wrap" style="max-width:640px;">
+      <h2>Still Thinking About Selling on Your Own?</h2>
+      <p style="color:var(--muted); font-size:16px; margin-top:10px;">There's nothing wrong with knowing your options first.</p>
+      <p style="color:var(--muted); font-size:16px; margin-top:6px;">See what real estate professionals would offer before making your decision.</p>
+      <p style="margin-top:22px;"><a class="btn fsbo-cta" data-cta="final" id="fsbo-cta-final" href="https://app.connexli.com/register?source=fsbo">Compare Agent Proposals</a></p>
+      <p class="note">No obligation to choose an agent.</p>
+      <p class="note" style="margin-top:6px;">Already have an account? <a class="fsbo-cta" data-cta="login" href="https://app.connexli.com/login?source=fsbo">Log in</a></p>
+    </div>
+  </section>
+</main>
+
+<a class="btn sticky-cta fsbo-cta" data-cta="sticky" id="stickyCta" href="https://app.connexli.com/register?source=fsbo">See What Agents Would Offer</a>
+
+<footer>
+  Connexli is not a real estate brokerage. Representation agreements are signed directly with each professional's brokerage.<br>
+  <a href="/index.html">Home</a> · <a href="/selling.html">Selling</a> · <a href="/buying.html">Buying</a> · <a href="/professionals.html">Professionals</a> · <a href="/about.html">Why We Built Connexli</a> · <a href="/terms.html">Terms of Service</a> · <a href="/privacy.html">Privacy Policy</a><br>
+  Live in Utah · © 2026 Connexli
+</footer>
+
+<script>
+  /* ---- Analytics (PostHog) ---- Paste the same Project API key ("phc_...") used in index.html. Empty = analytics off. */
+  const POSTHOG_KEY = "";
+  if (POSTHOG_KEY) {
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset identify alias group set_config".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init(POSTHOG_KEY, { api_host: 'https://us.i.posthog.com', persistence: 'memory' });
+  }
+
+  /* ---- Mobile menu ---- */
+  const menuBtn = document.querySelector('.menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  function setMenu(open){ menu.classList.toggle('open', open); menuBtn.setAttribute('aria-expanded', String(open)); }
+  menuBtn.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') setMenu(false); });
+
+  /* ---- FSBO analytics (same snake_case convention as seller_door / pro_door) ---- */
+  const track = (name, props) => { if (POSTHOG_KEY && window.posthog) posthog.capture(name, props); };
+  window.__fsboEvents = [];   // local record of what was tracked (used by automated tests; harmless in production)
+  const fsboTrack = (name, props) => { window.__fsboEvents.push([name, props]); track(name, props); };
+  const params = new URLSearchParams(location.search);
+  const utm = {};
+  ['utm_source', 'utm_medium', 'utm_campaign'].forEach(k => { if (params.get(k)) utm[k] = params.get(k).slice(0, 80); });
+  fsboTrack('fsbo_page_viewed', utm);
+  document.querySelectorAll('.fsbo-cta').forEach(a => a.addEventListener('click', () => fsboTrack('fsbo_seller_cta_clicked', { cta: a.dataset.cta, ...utm })));
+
+  /* ---- Sticky CTA (same behavior as selling.html) ---- */
+  const sticky = document.getElementById('stickyCta');
+  window.addEventListener('scroll', () => {
+    sticky.classList.toggle('show', window.scrollY > 600 && (window.innerHeight + window.scrollY) < document.body.scrollHeight - 700);
+  }, { passive: true });
+</script>
+</body>
+</html>
