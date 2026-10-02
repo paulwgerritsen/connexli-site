@@ -289,6 +289,7 @@
       <h2>Two minutes. Anonymous. Free. No obligation.</h2>
       <p style="max-width:560px; margin-left:auto; margin-right:auto;">Describe your home, tell us when you're hoping to list, and let verified listing agents show you — in writing — why they should earn your business.</p>
       <p style="margin-top:18px;"><a class="btn" href="https://app.connexli.com/register">Start my seller request</a></p>
+      <p class="note">Not ready yet? <a data-preview="selling" data-placement="selling-page" href="https://app.connexli.com/preview/selling">Preview the selling request</a> — see exactly what we ask. No account required.</p>
       <p class="note">Thinking about selling on your own? <a href="/fsbo">See your options first</a> — no obligation to choose an agent.</p>
     </div>
   </section>
@@ -329,6 +330,8 @@
 
   /* ---- Two-door + section analytics ---- */
   const track = (name, props) => { if (POSTHOG_KEY && window.posthog) posthog.capture(name, props); };
+  /* Request previews (Oct 1): which preview link was clicked — a page click only, never counted as a request. */
+  document.querySelectorAll('a[data-preview]').forEach(a => a.addEventListener('click', () => track('request_preview_clicked', { kind: a.dataset.preview, placement: a.dataset.placement })));
   document.getElementById('door-ready').addEventListener('click', () => track('seller_door', { door: 'ready' }));
   document.getElementById('door-learn').addEventListener('click', () => track('seller_door', { door: 'learn' }));
   const seen = new Set();

@@ -141,6 +141,23 @@
   }
 
   /* ===== how it works: numbered timeline ===== */
+  /* "See what Connexli asks" — request previews (Oct 1). Deliberately quieter
+     than the Get Started cards: outlined, text-link calls to action. */
+  .askprev{padding:44px 0 8px;}
+  .askprev h2{font-size:clamp(21px, 2.4vw, 26px); letter-spacing:-.01em;}
+  .askprev .lead{color:var(--muted); font-size:15.5px; margin-top:8px; max-width:60ch;}
+  .askprev-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:20px; max-width:820px;}
+  .askprev-card{display:block; background:#fff; border:1.5px solid var(--line); border-radius:var(--r-card); padding:18px 20px; color:inherit; text-decoration:none; transition:border-color .18s ease;}
+  .askprev-card:hover{border-color:var(--blue);}
+  .askprev-card:focus-visible{outline:3px solid var(--sky); outline-offset:2px;}
+  .askprev-card b{display:block; font-size:16px; color:var(--navy);}
+  .askprev-card span{display:block; font-size:14px; color:var(--muted); line-height:1.55; margin-top:4px;}
+  .askprev-card .go{color:var(--blue); font-weight:600; margin-top:10px;}
+  @media (max-width:640px){
+    .askprev{padding:34px 0 0;}
+    .askprev-grid{grid-template-columns:1fr; gap:10px;}
+    .askprev-card{padding:14px 16px;}
+  }
   .how{padding:88px 0 76px;}
   .how h2{font-size:clamp(26px, 3.2vw, 36px); max-width:16ch;}
   .how .lead{color:var(--muted); font-size:16px; margin-top:12px; max-width:52ch;}
@@ -307,6 +324,27 @@
         </a>
       </div>
       <p style="margin-top:16px; font-size:14px; color:#9FB2CC;">Doing both? One account handles both sides. · <a href="https://app.connexli.com/register" style="color:#42B6FF; font-weight:600;">Real estate professional? Get started ›</a></p>
+      <p style="margin-top:8px; font-size:14px; color:#9FB2CC;">Not ready yet? <a href="#preview" style="color:#C7D3E4; text-decoration:underline;">See what Connexli asks first ›</a></p>
+    </div>
+  </section>
+
+  <!-- SEE WHAT CONNEXLI ASKS — request previews (Paul, Oct 1) -->
+  <section class="askprev" id="preview">
+    <div class="wrap">
+      <h2>See what Connexli asks</h2>
+      <p class="lead">Not ready to submit a request? Preview the process first. No account required.</p>
+      <div class="askprev-grid">
+        <a class="askprev-card" data-preview="selling" data-placement="home" href="https://app.connexli.com/preview/selling">
+          <b>Preview Selling Request</b>
+          <span>See what information you'll provide when asking professionals to compete for your listing.</span>
+          <span class="go">Preview the selling questions ›</span>
+        </a>
+        <a class="askprev-card" data-preview="buying" data-placement="home" href="https://app.connexli.com/preview/buying">
+          <b>Preview Buying Request</b>
+          <span>See what information you'll provide when looking for a buyer's agent.</span>
+          <span class="go">Preview the buying questions ›</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -596,6 +634,12 @@
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset identify alias group set_config".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init(POSTHOG_KEY, { api_host: 'https://us.i.posthog.com', persistence: 'memory' });
   }
+
+  /* ---- Request previews (Oct 1): which preview link was clicked. A page
+     click only — never counted as a request. ---- */
+  document.querySelectorAll('a[data-preview]').forEach(a => a.addEventListener('click', () => {
+    if (POSTHOG_KEY && window.posthog) posthog.capture('request_preview_clicked', { kind: a.dataset.preview, placement: a.dataset.placement });
+  }));
 
   /* ---- Waitlist form (Paul, Aug 23) ----
      Submits directly to app.connexli.com/waitlist, which saves the signup

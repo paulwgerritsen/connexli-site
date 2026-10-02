@@ -287,6 +287,7 @@
       <h2>Two minutes. Anonymous. Free. No obligation.</h2>
       <p>Create your Buyer Profile, and verified buyer's agents in your areas are invited to compete for your business — up to ten sealed proposals per round, compared side by side — agents have up to 48 hours, and if all ten arrive early, your comparison is ready sooner. Want more? Get 10 more proposals on the same request. It works from out of state too: tell us where you're relocating from, and agents who specialize in relocation (video tours included) will say so.</p>
       <p style="margin-top:18px;"><a class="btn" href="https://app.connexli.com/register">Start my Buyer Profile</a></p>
+      <p class="note">Not ready yet? <a data-preview="buying" data-placement="buying-page" href="https://app.connexli.com/preview/buying">Preview the buying request</a> — see exactly what we ask. No account required.</p>
 
       <div class="playbook" data-section="playbook">
         <h3>Not quite ready? Take the playbook.</h3>
@@ -339,6 +340,8 @@
 
   /* ---- Two-door + section analytics (only fires when PostHog is on) ---- */
   const track = (name, props) => { if (POSTHOG_KEY && window.posthog) posthog.capture(name, props); };
+  /* Request previews (Oct 1): which preview link was clicked — a page click only, never counted as a request. */
+  document.querySelectorAll('a[data-preview]').forEach(a => a.addEventListener('click', () => track('request_preview_clicked', { kind: a.dataset.preview, placement: a.dataset.placement })));
   document.getElementById('door-ready').addEventListener('click', () => track('buyer_door', { door: 'ready' }));
   document.getElementById('door-learn').addEventListener('click', () => track('buyer_door', { door: 'learn' }));
   const seen = new Set();
